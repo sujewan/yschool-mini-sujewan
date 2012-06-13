@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>View Student</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            
+        <h:commandLink value="Main Menu" action="index" immediate="true"/>
+        &nbsp;
+        <h:commandLink value="Registration" action="studentRegistration" immediate="true"/>
+        &nbsp;
+        View Student
+        
+        <center>
+        <h1>Student Details </h1><br/>        
+
+        <p:dataTable id="dataTable" var="student" value="#{studentManagedBean.studentList}">
+                <p:column >
+                <f:facet name="header"><h:outputText value="Student ID"/></f:facet>
+                <h:outputText value="#{student.studentID}"/>
+                </p:column>
+
+                <p:column>
+                    <f:facet name="header"><h:outputText value="Student Name"/></f:facet>
+                    <h:outputText value="#{student.studentName}"/>
+                </p:column>
+            
+                <p:column>
+                    <f:facet name="header"><h:outputText value="Parent Name"/></f:facet>
+                    <h:outputText value="#{student.parentName}"/>
+                </p:column>
+            
+                <p:column>
+                    <f:facet name="header"> <h:outputText value="Address"/></f:facet>
+                    <h:outputText value="#{student.address}"/>
+                </p:column>
+
+                <p:column>
+                    <f:facet name="header"><h:outputText value="Grade"/> </f:facet>
+                    <h:outputText value="#{student.grade}"/>
+                </p:column>
+
+                
+        </p:dataTable>
+        </center>
+    </h:form>
+    </h:body>
+</html>
+

@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+    
+    <head>
+        <title> Student Registration </title>
+    </head>
+    
+    
+    <body>
+    
+        <h:form>
+            <h:commandLink value="Main Menu" action="index" immediate="true"/>
+            &nbsp;
+            Registration
+            &nbsp;
+            <h:commandLink value="View Student" action="viewStudent" immediate="true"/>
+            
+            <div>
+                <h1>Student Register</h1> 
+            </div>
+            
+            <table>
+                <tr>
+                    <td>Student Name</td>
+                    <td>
+                        <h:inputText label="Student Name" id="sName" value="#{studentManagedBean.insertedStudent.studentName}" required="true" />
+                    </td>
+                    <td>
+                        <h:message for="sName" errorStyle="color: red;" infoStyle="color: green;" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Address</td>
+                    <td>
+                        <h:inputTextarea label="Address" id="address" value="#{studentManagedBean.insertedStudent.address}" required="true" />
+                    </td>
+                    <td>
+                        <h:message for="address" errorStyle="color: red;" infoStyle="color: green;" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Grade</td>
+                    <td>
+                        <h:selectOneMenu label="Grade" value="#{studentManagedBean.insertedStudent.grade}" >
+                            <f:selectItem itemLabel="01" itemValue="01" />
+                            <f:selectItem itemLabel="02" itemValue="02" />
+                            <f:selectItem itemLabel="03" itemValue="03" />
+                            <f:selectItem itemLabel="04" itemValue="04" />
+                            <f:selectItem itemLabel="05" itemValue="05" />
+                            <f:selectItem itemLabel="06" itemValue="06" />
+                            <f:selectItem itemLabel="07" itemValue="07" />
+                            <f:selectItem itemLabel="08" itemValue="08" />
+                            <f:selectItem itemLabel="09" itemValue="09" />
+                            <f:selectItem itemLabel="10" itemValue="10" />
+                            <f:selectItem itemLabel="11" itemValue="11" />
+                            <f:selectItem itemLabel="12" itemValue="12" />
+                        </h:selectOneMenu>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Parent Name</td>
+                    <td>
+                        <h:inputText label="Parent Name" id="pName" value="#{studentManagedBean.insertedStudent.parentName}" required="true" />
+                    </td>
+                    <td>
+                        <h:message for="pName" errorStyle="color: red;" infoStyle="color: green;" />
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <h:commandButton value="Register" actionListener="#{studentManagedBean.addStudent}"/>
+                        <h:commandButton value="Reset" type="reset"/>
+                    </td>
+                </tr>
+            </table>
+            
+        </h:form>
+        
+    </body>
+</html>
+

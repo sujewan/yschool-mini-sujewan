@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    
+    <h:head>
+        <title>Registration Confirmation</title>
+    </h:head>
+    <h:body>
+        <h2>Registration Confirmation</h2>
+        
+        <h:form>
+            <table>
+                <tr>
+                    <td><h3>Student Name</h3></td>
+                    <td>
+                        <h3>: <h:outputText value="#{userBean.studentName}" /></h3>
+                    </td>
+                </tr>
+                <tr>
+                    <td><h3>Address</h3></td>
+                    <td>
+                        <h3>: <h:outputText value="#{userBean.address}" /></h3>
+                    </td>
+                </tr>
+                <tr>
+                    <td><h3>Grade</h3></td>
+                    <td>
+                        <h3>: <h:outputText value="#{userBean.grade}" /></h3>
+                    </td>
+                </tr>
+                <tr>
+                    <td><h3>Parent Name</h3></td>
+                    <td>
+                        <h3>: <h:outputText value="#{userBean.parentName}" /></h3>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <h:commandButton value="Edit" action="register" />
+                        <h:commandButton value="Confirm" action="#{userBean.addConfirm}" />
+                    </td>
+                </tr>
+            </table>
+        </h:form>
+    </h:body>
+    
+</html>

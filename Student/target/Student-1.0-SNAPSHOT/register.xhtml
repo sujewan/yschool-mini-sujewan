@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    
+    <h:head>
+        <title>Student Registration</title>
+    </h:head>
+    <h:body>
+        <h2>Student Registration</h2>
+        
+        <h:form>
+            <table>
+                <tr>
+                    <td>Student Name</td>
+                    <td>
+                        <h:inputText label="Student Name" id="sName" value="#{userBean.studentName}" required="true" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Address</td>
+                    <td>
+                        <h:inputTextarea label="Address" id="address" value="#{userBean.address}" required="true" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Grade</td>
+                    <td>
+                        <h:selectOneMenu label="Grade" value="#{userBean.grade}" >
+                            <f:selectItem itemLabel="01" itemValue="01" />
+                            <f:selectItem itemLabel="02" itemValue="02" />
+                            <f:selectItem itemLabel="03" itemValue="03" />
+                            <f:selectItem itemLabel="04" itemValue="04" />
+                        </h:selectOneMenu>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Parent Name</td>
+                    <td>
+                        <h:inputText label="Parent Name" id="pName" value="#{userBean.parentName}" required="true" />
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <h:commandButton value="Register" action="confirm" />
+                    </td>
+                </tr>
+            </table>
+            <font color="red">
+                <h:messages />
+            </font>
+        </h:form>
+        
+        <h:form>
+            <h:commandLink value="Main Page" action="index" />
+        </h:form>
+    </h:body>
+    
+</html>
